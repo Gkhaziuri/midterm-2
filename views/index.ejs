@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Manager</title>
+</head>
+<body style="font-family: sans-serif;">
+    <h1>Expense Manager</h1>
+    <form action="/add" method="post">
+        <label for="title">Title</label>
+        <input type="text" id="title" name="title" required>
+        <label for="amount">Amount</label>
+        <input type="number" id="amount" name="amount" required>
+        <button style="border-radius: 6px; border: none; padding: 10px; background-color: grey; cursor: pointer;" type="submit">Add</button>
+    </form>
+    <h3>Expenses</h3>
+    <ul>
+        <% expenses.forEach((expense, index) => { %>
+            <li><a href="/expense/<%= index %>"><%= expense.title %> - <%= expense.amount %></a></li>
+        <% }) %>
+    </ul>
+    
+</body>
+</html>
